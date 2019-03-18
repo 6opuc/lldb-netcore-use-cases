@@ -5,9 +5,9 @@ namespace Runner
 {
     class InfiniteWait : ITestCase
     {
-        public Task Run(string[] args)
+        public async Task Run(string[] args)
         {
-            return Task.Delay(Timeout.InfiniteTimeSpan);
+            await Task.Delay(Timeout.InfiniteTimeSpan);
         }
     }
 }
