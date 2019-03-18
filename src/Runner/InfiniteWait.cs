@@ -7,6 +7,11 @@ namespace Runner
     {
         public async Task Run(string[] args)
         {
+            await LongRunningCode();
+        }
+
+        private async Task LongRunningCode()
+        {
             await Task.Delay(Timeout.InfiniteTimeSpan);
         }
     }
