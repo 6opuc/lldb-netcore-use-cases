@@ -16,13 +16,13 @@ namespace Runner
             if (testCaseName == null)
             {
                 Console.Error.WriteLine($"Test case name was expected in first argument. Available test case names: {string.Join(",", availableTestCases.Keys)}.");
-                Environment.Exit(-1);
+                Environment.Exit(1);
             }
 
             if (!availableTestCases.TryGetValue(testCaseName, out ITestCase testCase))
             {
                 Console.Error.WriteLine($"Unknown test case name. Available test case names: {string.Join(",", availableTestCases.Keys)}.");
-                Environment.Exit(-2);
+                Environment.Exit(1);
             }
 
             await testCase.Run(args);
