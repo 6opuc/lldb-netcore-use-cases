@@ -89,7 +89,7 @@ OS Thread Id: 0x10 (9)
 00007FEAE657FC90 00007feb7f53b17f [GCFrame: 00007feae657fc90]
 00007FEAE657FD50 00007feb7f53b17f [DebuggerU2MCatchHandlerFrame: 00007feae657fd50]
 ```
-We see that thread is busy at Runner.InfiniteLoop+<>c.<Run>b__0_0()
+We see that thread is busy somewhere inside Runner.InfiniteLoop.Run()
 
 10. Look at source code of our method Runner.InfiniteLoop.Run: https://github.com/6opuc/lldb-netcore-use-cases/blob/master/src/Runner/InfiniteLoop.cs
 ```
