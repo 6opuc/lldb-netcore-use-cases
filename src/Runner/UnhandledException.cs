@@ -14,14 +14,13 @@ namespace Runner
             };
             foreach (var input in inputs)
             {
-                PrintResult(input);
+                Calc(input);
             }
         }
 
-        private void PrintResult(Input input)
+        private void Calc(Input input)
         {
             var result = input.A / input.B;
-            Console.WriteLine($"{input.A}/{input.B}={result}");
         }
 
         private class Input
