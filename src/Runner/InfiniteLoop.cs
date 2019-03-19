@@ -4,7 +4,7 @@ namespace Runner
 {
     class InfiniteLoop : ITestCase
     {
-        public Task Run(string[] args)
+        public void Run(string[] args)
         {
             while(true)
             {

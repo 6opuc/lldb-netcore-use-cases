@@ -4,6 +4,6 @@ namespace Runner
 {
     public interface ITestCase
     {
-        Task Run(string[] args);
+        void Run(string[] args);
     }
 }

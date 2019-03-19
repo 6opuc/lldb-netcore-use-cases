@@ -8,7 +8,7 @@ namespace Runner
 {
     class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
             var availableTestCases = GetAvailableTestCases();
 
@@ -25,7 +25,7 @@ namespace Runner
                 Environment.Exit(1);
             }
 
-            await testCase.Run(args);
+            testCase.Run(args);
         }
 
         private static Dictionary<string, ITestCase> GetAvailableTestCases()
