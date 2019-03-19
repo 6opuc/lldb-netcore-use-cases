@@ -98,3 +98,6 @@ We see from stack trace, that thread 8 stuck at System.Threading.Monitor.Enter
 We see, that two threads are using one object for synchronization and:
 - main thread acquired lock on object and got stuck waiting for worker thread to finish
 - worker thread got stuck waiting for main thread to release lock on the same object
+
+## TODO
+There is no `syncblk` command in current version of sosplugin for dotnet(2.2.3). It is available only in preview version. These instructions should be rewritten, when `syncblk` will be available in stable branches.
