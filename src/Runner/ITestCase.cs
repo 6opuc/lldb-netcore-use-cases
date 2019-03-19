@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Runner
+﻿namespace Runner
 {
     public interface ITestCase
     {

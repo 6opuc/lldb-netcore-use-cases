@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
 
 namespace Runner
 {
@@ -6,9 +6,14 @@ namespace Runner
     {
         public void Run(string[] args)
         {
-            while(true)
+            var thread = new Thread(() =>
             {
-            }
+                while (true)
+                {
+                }
+            });
+            thread.Start();
+            thread.Join();
         }
     }
 }
