@@ -1,6 +1,6 @@
 ﻿namespace Runner
 {
-    public interface ITestCase
+    interface ITestCase
     {
         void Run(string[] args);
     }
