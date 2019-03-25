@@ -92,7 +92,7 @@ Thread 1:
 ```
 We can find roots for other arrays the same way and we will see that all roots are the same: 
 ```
--> local variable of type Runner.MemoryLeak inside Runner.MemoryLeak.Run method
+-> an instance of type Runner.MemoryLeak inside Runner.MemoryLeak.Run method
 -> an event handler
 -> an instance of Runner.MemoryLeak+EventSubscriber
 -> our byte array
