@@ -7,7 +7,7 @@ Our dockerized dotnet application crashed and we don't have logs.
 docker run -it \
 	--cap-add sys_ptrace \
 	-e COMPlus_DbgEnableMiniDump=1 \
-    -e COMPlus_DbgMiniDumpName=/app/coredump \
+	-e COMPlus_DbgMiniDumpName=/app/coredump \
 	-e COMPlus_DbgMiniDumpType=4 \
 	6opuc/lldb-netcore-use-cases \
 	UnhandledException
@@ -30,7 +30,7 @@ Where f7cc2ea3a84c is id of container with our application and /app is crashed p
 docker run --rm -it -v /tmp/app:/app -e COREDUMP_PATH=/app/coredump 6opuc/lldb-netcore
 ```
 
-5. Print exception with command: `pe -lines`.
+4. Print exception with command: `pe -lines`.
 ```
 (lldb) sos PrintException -lines
 Exception object: 00007f7960021300
@@ -47,7 +47,7 @@ HResult: 80020012
 ```
 We see exception which caused application crash(System.DivideByZeroException)
 
-6. Print stack trace with arguments: `clrstack -a`
+5. Print stack trace with arguments: `clrstack -a`
 ```
 OS Thread Id: 0x1 (1)
         Child SP               IP Call Site
@@ -81,7 +81,7 @@ OS Thread Id: 0x1 (1)
 ```
 We see that exception was thrown in Runner.UnhandledException.Calc(Input) and object which was passed as argument into method is available at address 0x00007f79600212e8
 
-7. Dump argument 'input' from last method call(Runner.UnhandledException.Calc) using command: `dumpobj 0x00007f79600212e8`
+6. Dump argument 'input' from last method call(Runner.UnhandledException.Calc) using command: `dumpobj 0x00007f79600212e8`
 ```
 Name:        Runner.UnhandledException+Input
 MethodTable: 00007f797d6a14c0
@@ -95,7 +95,7 @@ Fields:
 ```
 We see object property values: A=3 and B=0.
 
-10. Look at source code of our method Runner.UnhandledException.Calc: https://github.com/6opuc/lldb-netcore-use-cases/blob/master/src/Runner/UnhandledException.cs
+7. Look at source code of our method Runner.UnhandledException.Calc: https://github.com/6opuc/lldb-netcore-use-cases/blob/master/src/Runner/UnhandledException.cs
 ```
 private void Calc(Input input)
 {
